@@ -16,10 +16,23 @@
 
 <mat-card class="item" *ngIf="task" (dblclick)="edit.emit(task)">
   <h2>{{task.name}}</h2>
-  <p>Number of Guests: {{ task.description }}</p>
-  <div>
-    <p>RSVP</p>
-    <div *ngIf="task.rsvp">Yes</div>
-    <div *ngIf="!task.rsvp">No</div>
-  </div>
+  <table style="text-align: left;">
+    <tr style="font-weight: bold;">
+      <td>
+        Number of Guests:
+      </td>
+      <td style="text-align: right; font-weight: normal;">
+        {{ task.numberOfGuests }}
+      </td>
+    </tr>
+    <tr>
+      <td style="font-weight: bold;">
+        RSVP:
+      </td>
+      <td>
+        <div style="text-align: right;" *ngIf="task.rsvp">Yes</div>
+        <div style="text-align: right;" *ngIf="!task.rsvp">No</div>
+      </td>
+    </tr>
+  </table>
 </mat-card>

@@ -24,7 +24,10 @@
   <input matInput [(ngModel)]="data.task.numberOfGuests" />
 </mat-form-field>
 
-<mat-slide-toggle [(ngModel)]="data.task.rsvp">RSVP</mat-slide-toggle>
+<div >
+  <mat-slide-toggle style="padding-right: 10px" [(ngModel)]="data.task.invited">Send Invite?</mat-slide-toggle>
+  <mat-slide-toggle [(ngModel)]="data.task.rsvp">RSVP</mat-slide-toggle>
+</div>
 
 <div mat-dialog-actions>
   <button mat-button [mat-dialog-close]="{task: data.task }">OK</button>

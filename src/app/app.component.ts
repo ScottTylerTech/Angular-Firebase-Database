@@ -22,6 +22,7 @@ import { TaskDialogResult, TaskDialogComponent } from './task-dialog/task-dialog
 import { Observable } from 'rxjs';
 // firestore
 import { AngularFirestore } from '@angular/fire/firestore';
+import { removeSummaryDuplicates } from '@angular/compiler';
 
 @Component({
   selector: 'app-root',
@@ -50,7 +51,19 @@ export class AppComponent {
           return;
         }
         result.task.rsvp = (result.task.rsvp) ? true : false;
-        this.store.collection('todo').add(result.task);
+
+        if(result.task.invited && result.task.rsvp){
+          // invited and rsvp?
+          this.store.collection('done').add(result.task);
+
+        }else if(result.task.invited){
+          // invited?
+          this.store.collection('inProgress').add(result.task);
+        }else{
+          // added to list
+          this.store.collection('todo').add(result.task);
+        }
+
       });
   }
 
