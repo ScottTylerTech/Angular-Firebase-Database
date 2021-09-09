@@ -74,7 +74,9 @@ export class AppComponent {
     });
   }
 
-  drop(event: CdkDragDrop<Task[]> | any): void {
+  drop(event: CdkDragDrop<any>): void {
+    const eventTask: Task[] = event.previousContainer.data[event.previousIndex]
+    console.log(typeof(eventTask));
     if (event.previousContainer === event.container) {
       return;
     }
