@@ -21,14 +21,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: 'AIzaSyACR3OxVnse4KftDoKrZkfO0P00-ligW0c',
-    authDomain: 'kanban-fire-workshop.firebaseapp.com',
-    databaseURL: 'https://kanban-fire-workshop.firebaseio.com',
-    projectId: 'kanban-fire-workshop',
-    storageBucket: 'kanban-fire-workshop.appspot.com',
-    messagingSenderId: '513024923782',
-    appId: '1:513024923782:web:ef27622969067c9e565907',
-    measurementId: 'G-1GXZ633QPQ',
+    apiKey: "AIzaSyAzRXRA12PVvgsZ46QZ_J09_KGTbepv3Ts",
+    authDomain: "fir-wedding-f6ac4.firebaseapp.com",
+    databaseURL: "https://fir-wedding-f6ac4-default-rtdb.firebaseio.com",
+    projectId: "fir-wedding-f6ac4",
+    storageBucket: "fir-wedding-f6ac4.appspot.com",
+    messagingSenderId: "151039176249",
+    appId: "1:151039176249:web:efc991d985fda6cf35a7e8",
+    measurementId: "G-ZG3JBFZQBF"
   },
 };
 

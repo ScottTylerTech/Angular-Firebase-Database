@@ -30,6 +30,11 @@ import { TaskDialogComponent } from './task-dialog/task-dialog.component';
 import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
 
+//fire base
+import { environment } from 'src/environments/environment';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFirestoreModule } from '@angular/fire/firestore';
+
 @NgModule({
   declarations: [AppComponent, TaskComponent, TaskDialogComponent],
   imports: [
@@ -42,7 +47,9 @@ import { FormsModule } from '@angular/forms';
     MatDialogModule,
     MatInputModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent],
