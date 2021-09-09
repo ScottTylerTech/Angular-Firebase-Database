@@ -16,6 +16,8 @@
 
 export interface Task {
   id?: string;
-  title: string;
+  name: string;
   description: string;
+  numberOfGuests: number;
+  rsvp: boolean;
 }

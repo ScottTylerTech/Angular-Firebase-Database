@@ -18,6 +18,7 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Task } from '../task/task';
 
+
 @Component({
   selector: 'app-task-dialog',
   templateUrl: './task-dialog.component.html',
@@ -32,8 +33,10 @@ export class TaskDialogComponent {
   ) {}
 
   cancel(): void {
-    this.data.task.title = this.backupTask.title;
+    this.data.task.name = this.backupTask.name;
     this.data.task.description = this.backupTask.description;
+    this.data.task.numberOfGuests = this.backupTask.numberOfGuests;
+    this.data.task.rsvp = this.backupTask.rsvp;
     this.dialogRef.close(this.data);
   }
 }

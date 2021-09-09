@@ -15,8 +15,11 @@
 -->
 
 <mat-card class="item" *ngIf="task" (dblclick)="edit.emit(task)">
-  <h2>{{ task.title }}</h2>
-  <p>
-    {{ task.description }}
-  </p>
+  <h2>{{task.name}}</h2>
+  <p>Number of Guests: {{ task.description }}</p>
+  <div>
+    <p>RSVP</p>
+    <div *ngIf="task.rsvp">Yes</div>
+    <div *ngIf="!task.rsvp">No</div>
+  </div>
 </mat-card>

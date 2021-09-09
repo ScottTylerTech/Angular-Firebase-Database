@@ -49,8 +49,7 @@ export class AppComponent {
         if (!result) {
           return;
         }
-        //result.task.id = this.makeid(10);
-        //console.log('task id:', result.task.id);
+        result.task.rsvp = (result.task.rsvp) ? true : false;
         this.store.collection('todo').add(result.task);
       });
   }
@@ -74,9 +73,8 @@ export class AppComponent {
     });
   }
 
-  drop(event: CdkDragDrop<any>): void {
-    const eventTask: Task[] = event.previousContainer.data[event.previousIndex]
-    console.log(typeof(eventTask));
+  drop(event: CdkDragDrop<Task[]>): void {
+
     if (event.previousContainer === event.container) {
       return;
     }
