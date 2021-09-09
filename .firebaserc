@@ -1,11 +1,5 @@
 {
-  "targets": {
-    "kanbanfire-b91c5": {
-      "hosting": {
-        "kanban-fire": [
-          "kanbanfire-b91c5"
-        ]
-      }
-    }
+  "projects": {
+    "default": "fir-app-c85b9"
   }
 }

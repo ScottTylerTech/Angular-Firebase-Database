@@ -20,20 +20,26 @@
 </mat-toolbar>
 
 <div class="content-wrapper">
-  <button (click)="newTask()" mat-button>
+  <button (click)="newTask()" mat-button color="primary">
     <mat-icon>add</mat-icon> New Guest
   </button>
 
   <div class="container-wrapper">
+
     <div class="container">
-      <div style="text-align: center; font-size: x-large; padding-bottom: 15px;">
-        Invited Guests
-        <button
+      <!--Invited Guests-->
+      <div class="container-wrapper" style="padding-bottom: 20px;">
+        <div class="list-label">
+          Invited Guests
+        </div>
+        <div>
+          <button
+          class="list-label-filter"
           mat-mini-fab
-          color="primary"
-          style="vertical-align: middle;">
+          color="primary">
           <mat-icon>filter_list</mat-icon>
         </button>
+        </div>
       </div>
 
       <mat-card
@@ -49,7 +55,20 @@
     </div>
 
     <div class="container">
-      <h2>RSVP No</h2>
+      <!--No RSVP-->
+      <div class="container-wrapper" style="padding-bottom: 20px;">
+        <div class="list-label">
+          RSVP No
+        </div>
+        <div>
+          <button
+          class="list-label-filter"
+          mat-mini-fab
+          color="primary">
+          <mat-icon>filter_list</mat-icon>
+        </button>
+        </div>
+      </div>
 
       <mat-card
         cdkDropList
@@ -65,7 +84,20 @@
     </div>
 
     <div class="container">
-      <h2>RSVP Yes</h2>
+       <!--Yes RSVP-->
+       <div class="container-wrapper" style="padding-bottom: 20px;">
+        <div class="list-label">
+          RSVP Yes
+        </div>
+        <div>
+          <button
+          class="list-label-filter"
+          mat-mini-fab
+          color="primary">
+          <mat-icon>filter_list</mat-icon>
+        </button>
+        </div>
+      </div>
 
       <mat-card
         cdkDropList

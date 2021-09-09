@@ -43,12 +43,30 @@ mat-toolbar > span {
   border-radius: 4px;
 }
 
+.list-label {
+  padding-left: 15px;
+  text-align: center;
+  margin: auto;
+  font-size: 3vw;
+  width: 100%;
+}
+
+.list-label-filter {
+  vertical-align: middle;
+  float: left;
+}
+
+.list-label-right {
+  vertical-align: middle;
+  margin-left: 70%;
+}
+
 app-new-task {
   margin-bottom: 30px;
 }
 
 .empty-label {
-  font-size: 2em;
+  font-size: 4vw;
   padding-top: 10px;
   text-align: center;
   opacity: 0.2;

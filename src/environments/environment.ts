@@ -21,14 +21,12 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyAzRXRA12PVvgsZ46QZ_J09_KGTbepv3Ts",
-    authDomain: "fir-wedding-f6ac4.firebaseapp.com",
-    databaseURL: "https://fir-wedding-f6ac4-default-rtdb.firebaseio.com",
-    projectId: "fir-wedding-f6ac4",
-    storageBucket: "fir-wedding-f6ac4.appspot.com",
-    messagingSenderId: "151039176249",
-    appId: "1:151039176249:web:efc991d985fda6cf35a7e8",
-    measurementId: "G-ZG3JBFZQBF"
+    apiKey: "AIzaSyDX1HnNTwtO2TZ_ni2DCkGNj8PK1Uv_O_g",
+  authDomain: "fir-app-c85b9.firebaseapp.com",
+  projectId: "fir-app-c85b9",
+  storageBucket: "fir-app-c85b9.appspot.com",
+  messagingSenderId: "373041729716",
+  appId: "1:373041729716:web:7e1e08f408dc237ac187e1"
   },
 };
 
