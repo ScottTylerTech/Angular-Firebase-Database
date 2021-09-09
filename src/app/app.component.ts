@@ -29,6 +29,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+
   todo = this.store.collection('todo').valueChanges({ idField: 'id' }) as Observable<Task[]>;
   inProgress = this.store.collection('inProgress').valueChanges({ idField: 'id' }) as Observable<Task[]>;
   done = this.store.collection('done').valueChanges({ idField: 'id' }) as Observable<Task[]>;
@@ -48,6 +49,8 @@ export class AppComponent {
         if (!result) {
           return;
         }
+        //result.task.id = this.makeid(10);
+        //console.log('task id:', result.task.id);
         this.store.collection('todo').add(result.task);
       });
   }
@@ -63,6 +66,7 @@ export class AppComponent {
 
     dialogRef.afterClosed().subscribe((result: TaskDialogResult) => {
       if (result.delete) {
+        console.log('delete task id:', task.id);
         this.store.collection(list).doc(task.id).delete();
       } else {
         this.store.collection(list).doc(task.id).update(task);
@@ -70,11 +74,15 @@ export class AppComponent {
     });
   }
 
-  drop(event: CdkDragDrop<Task[]|any>): void {
+  drop(event: CdkDragDrop<Task[]> | any): void {
     if (event.previousContainer === event.container) {
       return;
     }
+    if (!event.previousContainer.data || !event.container.data) {
+      return;
+    }
     const item = event.previousContainer.data[event.previousIndex];
+
     this.store.firestore.runTransaction(() => {
       const promise = Promise.all([
         this.store.collection(event.previousContainer.id).doc(item.id).delete(),
@@ -88,5 +96,16 @@ export class AppComponent {
       event.previousIndex,
       event.currentIndex
     );
+  }
+
+  makeid(length: number): string {
+    var result           = '';
+    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    var charactersLength = characters.length;
+    for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() *
+      charactersLength));
+    }
+    return result;
   }
 }
