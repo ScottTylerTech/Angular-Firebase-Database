@@ -51,20 +51,24 @@ export class AppComponent {
           return;
         }
         result.task.rsvp = (result.task.rsvp) ? true : false;
+        result.task.invited = (result.task.rsvp) ? true : result.task.invited;
 
-        if(result.task.invited && result.task.rsvp){
-          // invited and rsvp?
-          this.store.collection('done').add(result.task);
-
-        }else if(result.task.invited){
-          // invited?
-          this.store.collection('inProgress').add(result.task);
-        }else{
-          // added to list
-          this.store.collection('todo').add(result.task);
-        }
+        this.storeTask(result.task);
 
       });
+  }
+
+  storeTask(guest: Task){
+    if(guest.invited && guest.rsvp){
+      // invited and rsvp?
+      this.store.collection('done').add(guest);
+    }else if(guest.invited){
+      // invited?
+      this.store.collection('inProgress').add(guest);
+    }else{
+      // added to list
+      this.store.collection('todo').add(guest);
+    }
   }
 
   editTask(list: 'done' | 'todo' | 'inProgress', task: Task): void {
@@ -81,7 +85,10 @@ export class AppComponent {
         console.log('delete task id:', task.id);
         this.store.collection(list).doc(task.id).delete();
       } else {
-        this.store.collection(list).doc(task.id).update(task);
+        //this.store.collection(list).doc(task.id).update(task);
+        this.store.collection(list).doc(task.id).delete();
+        result.task.invited = (result.task.rsvp) ? true : result.task.invited;
+        this.storeTask(result.task);
       }
     });
   }
