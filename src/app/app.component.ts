@@ -31,7 +31,7 @@ import { removeSummaryDuplicates } from '@angular/compiler';
 })
 export class AppComponent {
 
-  todo = this.store.collection('todo').valueChanges({ idField: 'id' }) as Observable<Task[]>;
+  todo = this.store.collection('guests').valueChanges({ idField: 'id' }) as Observable<Task[]>;
   inProgress = this.store.collection('inProgress').valueChanges({ idField: 'id' }) as Observable<Task[]>;
   done = this.store.collection('done').valueChanges({ idField: 'id' }) as Observable<Task[]>;
 
@@ -51,27 +51,30 @@ export class AppComponent {
           return;
         }
         result.task.rsvp = (result.task.rsvp) ? true : false;
-        result.task.invited = (result.task.rsvp) ? true : result.task.invited;
-
+        //result.task.invited = (result.task.rsvp) ? true : result.task.invited;
         this.storeTask(result.task);
 
       });
   }
 
   storeTask(guest: Task){
+
     if(guest.invited && guest.rsvp){
       // invited and rsvp?
       this.store.collection('done').add(guest);
+      return;
     }else if(guest.invited){
       // invited?
       this.store.collection('inProgress').add(guest);
+      return;
     }else{
       // added to list
-      this.store.collection('todo').add(guest);
+      console.log(guest.name, " added to guests list");
+      this.store.collection('guests').add(guest);
     }
   }
 
-  editTask(list: 'done' | 'todo' | 'inProgress', task: Task): void {
+  editTask(list: 'done' | 'guests' | 'inProgress', task: Task): void {
     const dialogRef = this.dialog.open(TaskDialogComponent, {
       width: '270px',
       data: {

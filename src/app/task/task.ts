@@ -19,6 +19,6 @@ export interface Task {
   name: string;
   description: string;
   numberOfGuests: number;
-  invited: boolean;
-  rsvp: boolean;
+  invited?: boolean;
+  rsvp?: boolean;
 }

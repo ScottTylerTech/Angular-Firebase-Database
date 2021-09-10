@@ -35,9 +35,11 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
+import { HomeComponent } from './home/home.component';
+import { GuestListComponent } from './guest-list/guest-list.component';
 
 @NgModule({
-  declarations: [AppComponent, TaskComponent, TaskDialogComponent],
+  declarations: [AppComponent, TaskComponent, TaskDialogComponent, HomeComponent, GuestListComponent],
   imports: [
     BrowserModule,
     MatToolbarModule,
