@@ -1,115 +1,17 @@
-<!--
- Copyright 2020 Google LLC
+<nav mat-tab-nav-bar [backgroundColor]="background" color="primary">
+  <mat-toolbar color="primary">
+    <mat-icon>face</mat-icon>
+    <span>Shirley - Ceplina Wedding</span>
+    <mat-icon>navigate_next</mat-icon>
+  </mat-toolbar>
+    <a mat-tab-link
+    color="primary"
+    *ngFor="let link of navLinks"
+    [routerLink]="link.link"
+    routerLinkActive #rla="routerLinkActive"
+    [active]="link.link">
+    {{link.label}}
+  </a>
+</nav>
 
- Licensed under the Apache License, Version 2.0 (the "License");
- you may not use this file except in compliance with the License.
- You may obtain a copy of the License at
-
-      http://www.apache.org/licenses/LICENSE-2.0
-
- Unless required by applicable law or agreed to in writing, software
- distributed under the License is distributed on an "AS IS" BASIS,
- WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- See the License for the specific language governing permissions and
- limitations under the License.
--->
-
-<mat-toolbar color="primary">
-  <mat-icon>face</mat-icon>
-  <span>Shirley - Ceplina Wedding Guest List</span>
-</mat-toolbar>
-
-<div class="content-wrapper">
-  <button (click)="newTask()" mat-button color="primary">
-    <mat-icon>add</mat-icon> New Guest
-  </button>
-
-  <div class="container-wrapper">
-
-    <div class="container">
-      <!--Invited Guests-->
-      <div class="container-wrapper" style="padding-bottom: 20px;">
-        <div class="list-label">
-          Invited Guests
-        </div>
-        <div>
-          <button
-          class="list-label-filter"
-          mat-mini-fab
-          color="primary">
-          <mat-icon>filter_list</mat-icon>
-        </button>
-        </div>
-      </div>
-
-      <mat-card
-        cdkDropList
-        id="guests"
-        #todoList="cdkDropList"
-        [cdkDropListData]="todo | async"
-        [cdkDropListConnectedTo]="[doneList, inProgressList]"
-        class="list">
-        <p class="empty-label" *ngIf="(todo | async)?.length === 0">Empty list</p>
-        <app-task (edit)="editTask('guests', $event)" *ngFor="let task of todo | async" cdkDrag [task]="task"></app-task>
-      </mat-card>
-    </div>
-
-    <div class="container">
-      <!--No RSVP-->
-      <div class="container-wrapper" style="padding-bottom: 20px;">
-        <div class="list-label">
-          RSVP No
-        </div>
-        <div>
-          <button
-          class="list-label-filter"
-          mat-mini-fab
-          color="primary">
-          <mat-icon>filter_list</mat-icon>
-        </button>
-        </div>
-      </div>
-
-      <mat-card
-        cdkDropList
-        id="inProgress"
-        #inProgressList="cdkDropList"
-        [cdkDropListData]="inProgress"
-        [cdkDropListConnectedTo]="[todoList, doneList]"
-
-        class="list">
-        <p class="empty-label" *ngIf="(inProgress | async)?.length === 0">Empty list</p>
-        <app-task (edit)="editTask('inProgress', $event)" *ngFor="let task of inProgress | async" cdkDrag [task]="task"></app-task>
-      </mat-card>
-    </div>
-
-    <div class="container">
-       <!--Yes RSVP-->
-       <div class="container-wrapper" style="padding-bottom: 20px;">
-        <div class="list-label">
-          RSVP Yes
-        </div>
-        <div>
-          <button
-          class="list-label-filter"
-          mat-mini-fab
-          color="primary">
-          <mat-icon>filter_list</mat-icon>
-        </button>
-        </div>
-      </div>
-
-      <mat-card
-        cdkDropList
-        id="done"
-        #doneList="cdkDropList"
-        [cdkDropListData]="done"
-        [cdkDropListConnectedTo]="[todoList, inProgressList]"
-        class="list">
-        <p class="empty-label" *ngIf="(done | async)?.length === 0">Empty list</p>
-        <app-task (edit)="editTask('done', $event)" *ngFor="let task of done | async" cdkDrag [task]="task"></app-task>
-      </mat-card>
-    </div>
-  </div>
-</div>
-
+<router-outlet></router-outlet>

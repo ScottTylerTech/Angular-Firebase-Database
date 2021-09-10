@@ -13,47 +13,48 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import { AppComponent } from './app.component';
+import { HomeComponent } from './home/home.component';
+import { GuestListComponent } from './guest-list/guest-list.component';
+import { TaskComponent } from './task/task.component';
+import { TaskDialogComponent } from './task-dialog/task-dialog.component';
+import { MateiralModule } from './mateiral/mateiral.module';
 
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { TaskComponent } from './task/task.component';
-import { MatCardModule } from '@angular/material/card';
 import { DragDropModule } from '@angular/cdk/drag-drop';
-import { MatButtonModule } from '@angular/material/button';
-import { MatDialogModule } from '@angular/material/dialog';
-import { TaskDialogComponent } from './task-dialog/task-dialog.component';
-import { MatInputModule } from '@angular/material/input';
 import { FormsModule } from '@angular/forms';
-import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 
 //fire base
-import { environment } from 'src/environments/environment';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { HomeComponent } from './home/home.component';
-import { GuestListComponent } from './guest-list/guest-list.component';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
-  declarations: [AppComponent, TaskComponent, TaskDialogComponent, HomeComponent, GuestListComponent],
+  declarations: [
+    AppComponent,
+    TaskComponent,
+    TaskDialogComponent,
+    HomeComponent,
+    GuestListComponent
+  ],
   imports: [
     BrowserModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatCardModule,
     DragDropModule,
-    MatButtonModule,
-    MatDialogModule,
-    MatInputModule,
     FormsModule,
     BrowserAnimationsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
-    MatSlideToggleModule
+    MateiralModule,
+    RouterModule.forRoot([
+      { path: 'home', component: HomeComponent }, // first match wins
+      { path: 'guests-list', component: GuestListComponent },
+      { path: 'guests-list/:name', component: GuestListComponent },
+      { path: '', redirectTo: 'home', pathMatch: 'full' },
+      { path: '**', redirectTo: 'home', pathMatch: 'full' }, //404
+    ]),
   ],
   providers: [],
   bootstrap: [AppComponent],
