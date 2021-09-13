@@ -18,6 +18,8 @@ import { Component, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Task } from '../task/task';
 
+// disable button
+// https://stackoverflow.com/questions/46321558/how-do-i-disable-the-button-if-the-input-box-is-empty-and-enable-when-field-is-f/46322583
 
 @Component({
   selector: 'app-task-dialog',
@@ -25,18 +27,26 @@ import { Task } from '../task/task';
   styleUrls: ['./task-dialog.component.css'],
 })
 export class TaskDialogComponent {
+  public submitDisabled: boolean = true;
+
   private backupTask: Partial<Task> = { ...this.data.task };
 
   constructor(
     public dialogRef: MatDialogRef<TaskDialogComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: TaskDialogData
-  ) {}
+    @Inject(MAT_DIALOG_DATA) public data: TaskDialogData) {
+      console.log("name ", data.task.name);
+    }
 
   cancel(): void {
-    this.data.task.name = this.backupTask.name;
-    this.data.task.description = this.backupTask.description;
-    this.data.task.numberOfGuests = this.backupTask.numberOfGuests;
-    this.data.task.rsvp = this.backupTask.rsvp;
+    //this.data.task.name = this.backupTask.name;
+    //this.data.task.description = this.backupTask.description;
+    //this.data.task.numberOfGuests = this.backupTask.numberOfGuests;
+    //this.data.task.rsvp = this.backupTask.rsvp;
+    this.dialogRef.close(this.data);
+  }
+
+  //[mat-dialog-close]="{task: data.task }"
+  close(): void{
     this.dialogRef.close(this.data);
   }
 }

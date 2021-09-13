@@ -22,3 +22,38 @@
   margin-bottom: 10px;
   cursor: pointer;
 }
+
+.card-title {
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.card-name {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+.countdown-container {
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  text-align: center;
+  font-weight: 700;
+}
+
+.num-guests-c {
+  align-items: center;
+  margin: 1rem 1rem 1rem 1rem;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+.rsvp-c{
+  align-items: center;
+  margin: 1rem 1rem 1rem 1rem;
+}
