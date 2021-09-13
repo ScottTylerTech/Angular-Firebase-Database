@@ -1,0 +1,22 @@
+<body>
+  <h1>Days Until I Do</h1>
+  <div class="countdown-container">
+    <div class="countdown-el days-c">
+      <!--https://stackoverflow.com/questions/17648014/how-can-i-use-an-angularjs-filter-to-format-a-number-to-have-leading-zeros-->
+      <p class="big-text">{{("0"+days).slice(-2)}}</p>
+      <span>Days</span>
+    </div>
+    <div class="countdown-el hours-c">
+      <p class="big-text">{{("0"+hours).slice(-2)}}</p>
+      <span>Hours</span>
+    </div>
+    <div class="countdown-el minutes-c">
+      <p class="big-text">{{("0"+minutes).slice(-2)}}</p>
+      <span>Minutes</span>
+    </div>
+    <div class="countdown-el seconds-c">
+      <p class="big-text" id="seconds">{{("0"+seconds).slice(-2)}}</p>
+      <span>Seconds</span>
+    </div>
+  </div>
+</body>
