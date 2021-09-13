@@ -15,6 +15,7 @@ import { AngularFirestore } from '@angular/fire/firestore';
   styleUrls: ['./guest-list.component.css']
 })
 export class GuestListComponent{
+  public pageTitle = 'Guest List';
 
   todo = this.store.collection('guests').valueChanges({ idField: 'id' }) as Observable<Task[]>;
   inProgress = this.store.collection('inProgress').valueChanges({ idField: 'id' }) as Observable<Task[]>;

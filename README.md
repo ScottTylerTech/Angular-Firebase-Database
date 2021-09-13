@@ -1,11 +1,16 @@
-## How to use this repository
+## Injecting and Capturing Data
 
-This repository is meant to be used with the [Building a web application with Angular and Firebase](https://developers.google.com/codelabs/building-a-web-app-with-angular-and-firebase).
-
-## How to make contributions?
-
-Please read and follow the steps in the [CONTRIBUTING.md](CONTRIBUTING.md).
-
-## License
-
-See [LICENSE](LICENSE).
+### HTML
+```html
+<mat-form-field>
+  <mat-label>Number of Guests</mat-label>
+  <input matInput [(ngModel)]="data.task.numberOfGuests" />
+</mat-form-field>
+```
+### Component Code
+```js
+constructor(
+    public dialogRef: MatDialogRef<TaskDialogComponent>,
+    @Inject(MAT_DIALOG_DATA) public data: TaskDialogData
+  ) {}
+```

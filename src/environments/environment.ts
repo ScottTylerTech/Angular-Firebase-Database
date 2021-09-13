@@ -22,11 +22,11 @@ export const environment = {
   production: false,
   firebase: {
     apiKey: "AIzaSyDX1HnNTwtO2TZ_ni2DCkGNj8PK1Uv_O_g",
-  authDomain: "fir-app-c85b9.firebaseapp.com",
-  projectId: "fir-app-c85b9",
-  storageBucket: "fir-app-c85b9.appspot.com",
-  messagingSenderId: "373041729716",
-  appId: "1:373041729716:web:7e1e08f408dc237ac187e1"
+    authDomain: "fir-app-c85b9.firebaseapp.com",
+    projectId: "fir-app-c85b9",
+    storageBucket: "fir-app-c85b9.appspot.com",
+    messagingSenderId: "373041729716",
+    appId: "1:373041729716:web:7e1e08f408dc237ac187e1"
   },
 };
 

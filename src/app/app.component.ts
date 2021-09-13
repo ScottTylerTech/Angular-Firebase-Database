@@ -37,7 +37,10 @@ export class AppComponent implements OnInit{
   background: ThemePalette = undefined;
   navLinks: any[];
 
+  public ngRouter: Router;
+
   constructor(private router: Router){
+    this.ngRouter = router;
     this.navLinks = [
       {
           label: 'Home',
