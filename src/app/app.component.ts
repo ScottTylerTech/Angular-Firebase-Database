@@ -48,7 +48,7 @@ export class AppComponent implements OnInit{
           index: 0
       }, {
           label: 'Information',
-          link: './info',
+          link: './information',
           index: 1
       }, {
           label: 'Wedding Party',

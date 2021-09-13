@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  color: white;
+  background-image: url("/assets/campfire.jpg");
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center center;
+  margin: 0;
+
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  margin-right: 50%;
+  font-family: "Josefin Sans", sans-serif;
+  font-weight: 700;
+  font-size: 4rem;
+}
+p {
+  margin-left: 0.5rem;
+  line-height: 1rem;
+  font-size: 1.5rem;
+}
+
+.container {
+  margin: 3rem;
+  align-items: left;
+  justify-content: left;
+  line-height: 2rem;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.bullet-c {
+  margin-bottom: 1.5rem;
+}

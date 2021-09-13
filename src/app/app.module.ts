@@ -32,6 +32,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/environments/environment';
+import { InformationComponent } from './information/information.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { environment } from 'src/environments/environment';
     TaskComponent,
     TaskDialogComponent,
     HomeComponent,
-    GuestListComponent
+    GuestListComponent,
+    InformationComponent
   ],
   imports: [
     BrowserModule,
