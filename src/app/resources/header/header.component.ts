@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import {ThemePalette} from '@angular/material/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { AppRoutingModule, appRouting } from '../routing/routing.module';
 
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.css']
 })
+
 export class HeaderComponent implements OnInit {
+  appRoutes: RouterModule = new AppRoutingModule();
 
   pageTitle: string = 'Shirley - Ceplina Wedding';
   currentLink: string = '';
@@ -18,12 +21,13 @@ export class HeaderComponent implements OnInit {
 
   public ngRouter: Router;
 
+
   constructor(private router: Router){
     this.ngRouter = router;
     this.navLinks = [
       {
           label: 'Home',
-          link: './home',
+          link: '/home',
           index: 0
       }, {
           label: 'Information',
@@ -31,7 +35,7 @@ export class HeaderComponent implements OnInit {
           index: 1
       }, {
           label: 'Wedding Party',
-          link: './party',
+          link: './wedding-party',
           index: 2
       }, {
           label: 'Guests',
@@ -44,6 +48,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
     this.router.events.subscribe((res) => {
         this.activeLinkIndex = this.navLinks.indexOf(this.navLinks.find(tab => tab.link === '.' + this.router.url));
+
     });
   }
 

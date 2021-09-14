@@ -2,12 +2,18 @@
   box-sizing: border-box;
 }
 
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
 body {
   color: white;
   background-image: url("/assets/campfire.jpg");
-  min-height: 100vh;
   background-size: cover;
   background-position: center center;
+  background-attachment: scroll;
   margin: 0;
 
   display: flex;
@@ -16,14 +22,15 @@ body {
 
 h2 {
   margin-right: 50%;
+  line-height: 1;
   font-family: "Josefin Sans", sans-serif;
   font-weight: 700;
-  font-size: 4rem;
+  font-size: 2.5rem;
 }
 p {
   margin-left: 0.5rem;
   line-height: 1rem;
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
 .container {

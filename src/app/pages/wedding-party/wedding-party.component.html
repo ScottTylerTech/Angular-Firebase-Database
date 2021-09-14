@@ -1,0 +1,30 @@
+<div class="bg-image"></div>
+  <div class="container-party">
+    <div class="container-col">
+      <div class="containter-member">
+        <h1>{{bride.name}}</h1>
+        <p>{{bride.title}}</p>
+      </div>
+
+      <div class="container-member" *ngFor="let member of bridesmaids">
+        <h1>{{member.name}}</h1>
+        <p>{{member.title}}</p>
+    </div>
+    </div>
+
+    <div class="container-col">
+      <div class="containter-member">
+        <h1>{{groom.name}}</h1>
+        <p>{{groom.title}}</p>
+      </div>
+
+      <div class="container-member" *ngFor="let member of groomsmen">
+          <h1>{{member.name}}</h1>
+          <p>{{member.title}}</p>
+      </div>
+    </div>
+
+
+    <app-party-member *ngFor="let member of groomsmen"></app-party-member>
+  </div>
+

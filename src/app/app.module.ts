@@ -34,6 +34,8 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { environment } from 'src/app/resources/environments/environment';
+import { WeddingPartyComponent } from './pages/wedding-party/wedding-party.component';
+import { PartyMemberComponent } from './resources/party-member/party-member.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import { environment } from 'src/app/resources/environments/environment';
     HomeComponent,
     GuestListComponent,
     InformationComponent,
-    HeaderComponent
+    HeaderComponent,
+    WeddingPartyComponent,
+    PartyMemberComponent
   ],
   imports: [
     BrowserModule,
