@@ -1,18 +1,2 @@
-<nav mat-tab-nav-bar [backgroundColor]="background" color="primary">
-  <mat-toolbar color="primary">
-    <mat-icon>face</mat-icon>
-    <span>Shirley - Ceplina Wedding</span>
-    <mat-icon>navigate_next</mat-icon>
-    {{ngRouter.url.split('?')[0]}}
-  </mat-toolbar>
-    <a mat-tab-link
-    color="primary"
-    *ngFor="let link of navLinks"
-    [routerLink]="link.link"
-    routerLinkActive #rla="routerLinkActive"
-    [active]="link.link">
-    {{link.label}}
-  </a>
-</nav>
-
+<app-header></app-header>
 <router-outlet></router-outlet>

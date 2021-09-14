@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Task } from '../task/task';
-import { TaskDialogResult, TaskDialogComponent } from '../task-dialog/task-dialog.component';
+import { Task } from '../../resources/task/task';
+import { TaskDialogResult, TaskDialogComponent } from '../../resources/task-dialog/task-dialog.component';
 
 import { CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
 import { MatDialog } from '@angular/material/dialog';

@@ -1,9 +1,9 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from "@angular/router";
-import { GuestListComponent } from "../guest-list/guest-list.component";
-import { HomeComponent } from "../home/home.component";
-import { InformationComponent } from '../information/information.component';
+import { GuestListComponent } from "../../pages/guest-list/guest-list.component";
+import { HomeComponent } from "../../pages/home/home.component";
+import { InformationComponent } from '../../pages/information/information.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent }, // first match wins

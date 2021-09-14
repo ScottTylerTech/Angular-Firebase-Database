@@ -14,12 +14,14 @@
  * limitations under the License.
  */
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { GuestListComponent } from './guest-list/guest-list.component';
-import { TaskComponent } from './task/task.component';
-import { TaskDialogComponent } from './task-dialog/task-dialog.component';
-import { MateiralModule } from './mateiral/mateiral.module';
-import { AppRoutingModule } from './routing/routing.module';
+import { HomeComponent } from './pages/home/home.component';
+import { GuestListComponent } from './pages/guest-list/guest-list.component';
+import { InformationComponent } from './pages/information/information.component';
+import { TaskComponent } from './resources/task/task.component';
+import { TaskDialogComponent } from './resources/task-dialog/task-dialog.component';
+import { MateiralModule } from './resources/mateiral/mateiral.module';
+import { AppRoutingModule } from './resources/routing/routing.module';
+import { HeaderComponent } from './resources/header/header.component';
 import { RouterModule } from '@angular/router';
 
 import { BrowserModule } from '@angular/platform-browser';
@@ -31,8 +33,7 @@ import { NgModule } from '@angular/core';
 //fire base
 import { AngularFireModule } from '@angular/fire';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
-import { environment } from 'src/environments/environment';
-import { InformationComponent } from './information/information.component';
+import { environment } from 'src/app/resources/environments/environment';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { InformationComponent } from './information/information.component';
     TaskDialogComponent,
     HomeComponent,
     GuestListComponent,
-    InformationComponent
+    InformationComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
