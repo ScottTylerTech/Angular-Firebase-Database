@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-party-member',
@@ -7,6 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class PartyMemberComponent{
   @Input() member: PartyMember|null = null;
+  @Output() edit = new EventEmitter<PartyMember>();
+
 }
 
 export interface PartyMember {

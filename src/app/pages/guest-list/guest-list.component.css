@@ -13,7 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+body{
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 60%;
+  left: 50%;
+}
 mat-toolbar {
   margin-bottom: 20px;
 }
@@ -22,19 +27,20 @@ mat-toolbar > span {
   margin-left: 10px;
 }
 
-.content-wrapper {
-  max-width: 1400px;
-  margin: auto;
+.container{
+  margin-left: 2rem;
+  margin-right: 2rem;
 }
-
-.container-wrapper {
+.container-row{
   display: flex;
-  justify-content: space-around;
+  flex-direction: row;
 }
 
-.container {
-  width: 400px;
-  margin: 0 25px 25px 0;
+.container-col {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-top: 2rem;
 }
 
 .list {
@@ -46,9 +52,8 @@ mat-toolbar > span {
 .list-label {
   padding-left: 15px;
   text-align: center;
-  margin: auto;
   font-size: 3vw;
-  width: 100%;
+  line-height: 3vw;
 }
 
 .list-label-filter {
@@ -62,7 +67,7 @@ mat-toolbar > span {
 }
 
 app-new-task {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .empty-label {
@@ -78,4 +83,21 @@ app-new-task {
 
 .cdk-drag-placeholder {
   opacity: 0;
+}
+
+.bg-image {
+  /* The image used */
+  background-image: url("src/assets/party-bg.jpg");
+
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }

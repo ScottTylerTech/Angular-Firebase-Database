@@ -61,5 +61,6 @@
 .card-btn{
   justify-content: flex-end;
   display: flex;
-  margin-top: -3rem;
+  margin-top: -2rem;
+  padding-left: 20px;
 }

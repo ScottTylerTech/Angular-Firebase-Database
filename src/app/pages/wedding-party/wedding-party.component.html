@@ -6,10 +6,7 @@
         <p>{{bride.title}}</p>
       </div>
 
-      <div class="container-member" *ngFor="let member of bridesmaids">
-        <h1>{{member.name}}</h1>
-        <p>{{member.title}}</p>
-    </div>
+      <app-party-member *ngFor="let member of bridesmaids" cdkDrag [member]="member"></app-party-member>
     </div>
 
     <div class="container-col">
@@ -17,14 +14,8 @@
         <h1>{{groom.name}}</h1>
         <p>{{groom.title}}</p>
       </div>
+      <app-party-member *ngFor="let member of groomsmen" cdkDrag [member]="member"></app-party-member>
 
-      <div class="container-member" *ngFor="let member of groomsmen">
-          <h1>{{member.name}}</h1>
-          <p>{{member.title}}</p>
-      </div>
     </div>
-
-
-    <app-party-member *ngFor="let member of groomsmen"></app-party-member>
   </div>
 
