@@ -1,21 +1,44 @@
 <div class="bg-image"></div>
-  <div class="container-party">
-    <div class="container-col">
-      <div class="containter-member">
-        <h1>{{bride.name}}</h1>
-        <p>{{bride.title}}</p>
-      </div>
-
-      <app-party-member *ngFor="let member of bridesmaids" cdkDrag [member]="member"></app-party-member>
+<div class="container-party">
+  <!--Women-->
+  <div class="container-col">
+    <!--Bride-->
+    <div class="containter-member">
+      <h1>{{bride.firstName}} {{bride.lastName}}</h1>
+      <p>{{bride.title}}</p>
     </div>
 
-    <div class="container-col">
-      <div class="containter-member">
-        <h1>{{groom.name}}</h1>
-        <p>{{groom.title}}</p>
+    <!--Party-->
+    <div style="margin-left: 5rem; margin-top: -4rem;">
+      <!--Maid of Honor-->
+      <div *ngFor="let member of bridesmaids | async">
+        <app-party-member  *ngIf="member?.title === 'Maid of Honor' " cdkDrag [member]="member"></app-party-member>
       </div>
-      <app-party-member *ngFor="let member of groomsmen" cdkDrag [member]="member"></app-party-member>
-
+      <!--Bridesmaids-->
+      <div *ngFor="let member of bridesmaids | async">
+        <app-party-member *ngIf="member?.title != 'Maid of Honor' " cdkDrag [member]="member"></app-party-member>
+      </div>
     </div>
   </div>
 
+  <!--Men-->
+  <div class="container-col">
+    <!--Groom-->
+    <div class="containter-member">
+      <h1>{{groom.firstName}} {{groom.lastName}}</h1>
+      <p>{{groom.title}}</p>
+    </div>
+
+    <!--Party-->
+    <div style="margin-left: 5rem; margin-top: -4rem;">
+      <!--Bestman-->
+      <div *ngFor="let member of groomsmen | async">
+        <app-party-member *ngIf="member?.title === 'Best Man' " cdkDrag [member]="member"></app-party-member>
+      </div>
+      <!--Groomsmen-->
+      <div *ngFor="let member of groomsmen | async">
+        <app-party-member *ngIf="member?.title != 'Best Man' " cdkDrag [member]="member"></app-party-member>
+      </div>
+    </div>
+  </div>
+</div>

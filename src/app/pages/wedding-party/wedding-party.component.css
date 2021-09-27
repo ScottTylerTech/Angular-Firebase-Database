@@ -27,13 +27,13 @@ html {
 .container-party {
   position: absolute;
   transform: translate(-50%, -50%);
-  top: 50%;
+  margin-top: 10%;
+  top: 30%;
   left: 50%;
 
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center;
 }
 
 /* Position text in the middle of the page/image */
@@ -57,24 +57,31 @@ html {
   color: white;
   font-family: "Josefin Sans", sans-serif;
   text-align: center;
-  justify-content: center;
-
+  margin-top: 2.5rem;
   margin-bottom: 1rem;
+  height: 200px;
 }
 .containter-member h1 {
   font-size: 4rem;
+  line-height: 1;
 }
 .containter-member p {
   font-size: 1rem;
 }
 
-.container-col {
-  flex: content;
-  flex-direction: column;
-  margin: 10rem;
+.container-party{
+  margin-left: 5rem;
+  flex: inherit;
+  flex-direction: inherit;
+}
 
-  text-align: center;
-  justify-content: center;
+.container-col {
+  flex:content;
+  flex-direction: column;
+  align-items: center;
+  align-content:center;
+  width: 500px;
+  margin-top: -5rem;
   color: white;
   font-family: "Josefin Sans", sans-serif;
 }

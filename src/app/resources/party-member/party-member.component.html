@@ -1,5 +1,16 @@
-
-  <div class="containter-member">
-    <h1>{{member?.name}}</h1>
-    <p>{{member?.title}}</p>
-  </div>
+<div style="justify-content: center;">
+  <mat-card>
+    <div>
+      <h1>{{member?.firstName}} {{member?.lastName}}</h1>
+      <p>{{member?.title}}</p>
+    </div>
+    <div *ngIf="this.isExpanded">
+      <member-biography></member-biography>
+    </div>
+    <button 
+      mat-stroked-button 
+      (click)="bioClick()">
+      <mat-icon>{{bioIcon}}</mat-icon>
+    </button>
+  </mat-card>
+</div>
