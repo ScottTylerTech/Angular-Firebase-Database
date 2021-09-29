@@ -1,19 +1,15 @@
-.containter-member {
-  color: white;
-  font-family: "Josefin Sans", sans-serif;
-  text-align: center;
+.container-bio{
+  margin-bottom: 10%;
 }
 
+.container-party-member{
+  align-items: center;
+}
 mat-card{
+  text-align: center;
   background-color: #fdf0d5af ;
-  margin: 1rem;
   width: 350px;
   color: #003049;
-  text-align: center;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 mat-card h1{

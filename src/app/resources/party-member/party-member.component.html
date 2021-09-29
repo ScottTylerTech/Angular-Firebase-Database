@@ -1,15 +1,16 @@
-<div style="justify-content: center;">
+<div class="container-party-member">
   <mat-card>
     <div>
       <h1>{{member?.firstName}} {{member?.lastName}}</h1>
       <p>{{member?.title}}</p>
     </div>
-    <div *ngIf="this.isExpanded">
+
+    <div 
+      class="container-bio"
+      *ngIf="this.isExpanded">
       <member-biography></member-biography>
     </div>
-    <button 
-      mat-stroked-button 
-      (click)="bioClick()">
+    <button mat-stroked-button (click)="bioClick()">
       <mat-icon>{{bioIcon}}</mat-icon>
     </button>
   </mat-card>

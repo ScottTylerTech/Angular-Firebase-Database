@@ -14,11 +14,11 @@ export class PartyMemberComponent{
   @Output() edit = new EventEmitter<PartyMember>();
 
   public isExpanded: boolean = false;
-  public bioIcon: string = 'expand_more';
+  public bioIcon: string = 'account_circle';
   
   public bioClick(): void{
-    this.bioIcon = (this.isExpanded) ? 'expand_less' : 'expand_more';
     this.isExpanded = !this.isExpanded;
+    this.bioIcon = (this.isExpanded) ? 'expand_less' : 'account_circle';
   }
 }
 
