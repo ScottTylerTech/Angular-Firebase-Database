@@ -8,7 +8,7 @@
     <div 
       class="container-bio"
       *ngIf="this.isExpanded">
-      <member-biography></member-biography>
+      <member-biography [member]="member"></member-biography>
     </div>
     <button mat-stroked-button (click)="bioClick()">
       <mat-icon>{{bioIcon}}</mat-icon>

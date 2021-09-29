@@ -1,3 +1,6 @@
 <mat-card>
-    Words words words.
+    <div class="card-image-bg">
+        <img class="card-image" [src]="member?.bioPic" alt="bio pic">
+    </div>
+    {{member?.biography}}
 </mat-card>

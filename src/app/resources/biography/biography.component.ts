@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { PartyMember } from '../party-member/party-member.component';
 
 @Component({
   selector: 'member-biography',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./biography.component.css']
 })
 export class BiographyComponent implements OnInit {
-
+  @Input() member: PartyMember|null = null;
   constructor() { }
 
   ngOnInit(): void {

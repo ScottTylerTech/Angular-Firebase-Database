@@ -27,4 +27,5 @@ export interface PartyMember {
   lastName: string;
   title: string;
   biography: string;
+  bioPic: string;
 }

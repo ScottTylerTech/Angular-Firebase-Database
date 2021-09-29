@@ -10,8 +10,8 @@ import { PartyMember } from 'src/app/resources/party-member/party-member.compone
 })
 export class WeddingPartyComponent implements OnInit {
 
-  public bride: PartyMember = {firstName: 'Jessica', lastName: 'Ceplina', title: 'The Bride', biography: '',};
-  public groom: PartyMember = {firstName: 'Scott', lastName: 'Shirley', title: 'The Groom', biography: '',};
+  public bride: PartyMember = {firstName: 'Jessica', lastName: 'Ceplina', title: 'The Bride', biography: '', bioPic: '',};
+  public groom: PartyMember = {firstName: 'Scott', lastName: 'Shirley', title: 'The Groom', biography: '', bioPic: '',};
 
   public bridesmaids = this.store.collection('bridesmaids').valueChanges({ idField: 'id' }) as unknown as Observable<PartyMember[]>;
   public groomsmen = this.store.collection('groomsmen').valueChanges({ idField: 'id' }) as unknown as Observable<PartyMember[]>;

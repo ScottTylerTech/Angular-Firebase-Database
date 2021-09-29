@@ -15,7 +15,10 @@
         class="containter-member"
         *ngFor="let member of bridesmaids | async">
 
-        <app-party-member  *ngIf="member?.title === 'Maid of Honor' " cdkDrag [member]="member"></app-party-member>
+        <app-party-member  
+          *ngIf="member?.title === 'Maid of Honor' " 
+          [member]="member">
+        </app-party-member>
       
       </div>
       <!--Bridesmaids-->
@@ -23,7 +26,10 @@
         class="containter-member"
         *ngFor="let member of bridesmaids | async">
         
-        <app-party-member *ngIf="member?.title != 'Maid of Honor' " cdkDrag [member]="member"></app-party-member>
+        <app-party-member 
+          *ngIf="member?.title != 'Maid of Honor' " 
+          [member]="member">
+        </app-party-member>
       
       </div>
     </div>
@@ -43,13 +49,18 @@
       <div 
         class="containter-member"
         *ngFor="let member of groomsmen | async">
-        <app-party-member *ngIf="member?.title === 'Best Man' " cdkDrag [member]="member"></app-party-member>
+        
+        <app-party-member 
+          *ngIf="member?.title === 'Best Man' " 
+          [member]="member">
+        </app-party-member>
+        
       </div>
       <!--Groomsmen-->
       <div 
         class="containter-member"
         *ngFor="let member of groomsmen | async">
-        <app-party-member *ngIf="member?.title != 'Best Man' " cdkDrag [member]="member"></app-party-member>
+        <app-party-member *ngIf="member?.title != 'Best Man' " [member]="member"></app-party-member>
       </div>
     </div>
   </div>
